@@ -1,3 +1,9 @@
+---
+layout: default
+title: SOP Master Guide
+---
+
+
 # Statement of Purpose (SOP) Guide for Master's Applications
 *A Comprehensive Framework for Writing Compelling Graduate School Essays*
 
