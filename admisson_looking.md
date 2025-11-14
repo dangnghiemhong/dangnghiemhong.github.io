@@ -1,6 +1,6 @@
 ---
 layout: default
-title: SOP Master Guide
+title: The things they are seeking
 ---
 
 # What Admissions Committees Really Look For
