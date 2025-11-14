@@ -454,6 +454,42 @@ For your top 3 programs, identify:
 5. **Tightening pass**: Reduce word count by 15-20%
 6. **Final customization**: School-specific details
 
+### Organizing Multiple School Prompts (3-Column Method)
+
+If you are applying to many programs, don’t write 10 completely separate SOPs from scratch.  
+Instead, classify each school’s prompt into **three buckets**:
+
+1. **Identical questions**  
+   Prompts that are basically the same.
+   > e.g., “Describe your academic and professional goals and how this program will help you achieve them.”
+
+2. **Similar questions**  
+   Same *idea* but slightly different wording or emphasis.
+   > e.g., “How does this program fit into your career plans?” vs.  
+   > “What are your short- and long-term goals, and how will our program help you reach them?”
+
+3. **Unique questions**  
+   Truly special or weird prompts that require their own paragraph or essay.
+   > e.g., “Describe a time you changed your mind about an important issue.”  
+   > or “What would you do if you had unlimited research funding for one year?”
+
+**How to use this in practice**
+
+- Make a small spreadsheet or table with 3 columns:
+
+  | School | Prompt | Category (Identical / Similar / Unique) |
+  |--------|--------|-----------------------------------------|
+  | School A | “Describe your academic and professional goals…” | Identical |
+  | School B | “How does this program fit into your career plans?” | Similar |
+  | School C | “Describe a time you changed your mind…” | Unique |
+
+- Write:
+  - **One strong base version** for the *identical* prompts.
+  - **One or two adaptable versions** for the *similar* prompts.
+  - **Custom mini-essays or paragraphs** for the *unique* prompts.
+
+This way, you reuse 60–80% of your work while still giving every school a tailored, thoughtful answer.
+
 ### Content Checklist (What Must Be Present)
 - [ ] Academic preparation: 2-3 upper-division courses with YOUR project/contribution
 - [ ] Applied experience: Problem → Method → Result → Learning format
@@ -564,13 +600,6 @@ Your entire essay should convey:
 - Be clear about objectives and how the program helps achieve them
 - Remember: Committees read hundreds of essays - make yours memorable through specificity
 
-### University Resources Referenced
-- Stanford Graduate Admissions (word limits)
-- UC Berkeley Graduate Division (program fit guidance)  
-- MIT EECS Communication Lab (technical specificity)
-- Harvard GSAS (research vs personal statements)
-- Oxford Graduate Admissions (length enforcement)
-
 ---
 
 *Document compiled and enhanced for optimal Master's program applications*  
@@ -585,5 +614,9 @@ Your entire essay should convey:
 - Donald Asher, *Graduate Admissions Essays: Write Your Way into the Graduate School of Your Choice*,  
   5th edition, Clarkson Potter / Ten Speed Press, 2024.
 
-- Additional guidance synthesized from official graduate admissions pages of  
-  Stanford University, UC Berkeley, Harvard GSAS, University of Oxford, MIT, and Carnegie Mellon University.
+- Additional guidance synthesized from these following official graduate admissions pages:
+   - Stanford Graduate Admissions (word limits)
+   - UC Berkeley Graduate Division (program fit guidance)  
+   - MIT EECS Communication Lab (technical specificity)
+   - Harvard GSAS (research vs personal statements)
+   - Oxford Graduate Admissions (length enforcement)
