@@ -475,18 +475,18 @@ Instead, classify each school’s prompt into **three buckets**:
 
 **How to use this in practice**
 
-- Make a small spreadsheet or table with 3 columns:
+Make a small spreadsheet or table with 3 columns:
 
-  | School | Prompt | Category (Identical / Similar / Unique) |
-  |--------|--------|-----------------------------------------|
-  | School A | “Describe your academic and professional goals…” | Identical |
-  | School B | “How does this program fit into your career plans?” | Similar |
-  | School C | “Describe a time you changed your mind…” | Unique |
+| School | Prompt | Category |
+|--------|--------|----------|
+| School A | "Describe your academic and professional goals…" | Identical |
+| School B | "How does this program fit into your career plans?" | Similar |
+| School C | "Describe a time you changed your mind…" | Unique |
 
-- Write:
-  - **One strong base version** for the *identical* prompts.
-  - **One or two adaptable versions** for the *similar* prompts.
-  - **Custom mini-essays or paragraphs** for the *unique* prompts.
+Then write:
+- **One strong base version** for the *identical* prompts.
+- **One or two adaptable versions** for the *similar* prompts.
+- **Custom mini-essays or paragraphs** for the *unique* prompts.
 
 This way, you reuse 60–80% of your work while still giving every school a tailored, thoughtful answer.
 
