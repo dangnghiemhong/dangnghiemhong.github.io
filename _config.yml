@@ -1,1 +1,32 @@
-theme: jekyll-theme-cayman
+# Site Settings
+title: Dang Hong Nghiem
+description: Research Assistant & Academic Writing Guide
+author: Dang Hong Nghiem
+email: nghiemhongdang@gmail.com
+
+# URL Settings
+baseurl: ""
+url: "https://dangnghiemhong.github.io"
+
+# Build Settings
+markdown: kramdown
+highlighter: rouge
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Default layout
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
