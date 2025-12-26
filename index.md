@@ -18,7 +18,7 @@ title: Home
 
 <div class="contact-links">
     <a href="mailto:nghiemhongdang@gmail.com" class="contact-link">
-        📧 Email
+        📧 nghiemhongdang@gmail.com
     </a>
     <a href="https://github.com/dangnghiemhong" target="_blank" class="contact-link">
         💻 GitHub

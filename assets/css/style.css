@@ -247,6 +247,242 @@ body {
     text-align: center;
 }
 
+/* Email Display */
+.email-display {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    color: #667eea;
+    font-weight: 500;
+}
+
+/* ========================================
+   MARKDOWN CONTENT STYLES
+   ======================================== */
+
+.tab-content h1 {
+    font-size: 2rem;
+    color: #333;
+    margin: 1.5rem 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #667eea;
+    font-weight: 700;
+}
+
+.tab-content h2 {
+    font-size: 1.5rem;
+    color: #444;
+    margin: 2rem 0 1rem 0;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid #e0e0e0;
+    font-weight: 600;
+}
+
+.tab-content h3 {
+    font-size: 1.25rem;
+    color: #555;
+    margin: 1.5rem 0 0.75rem 0;
+    font-weight: 600;
+}
+
+.tab-content h4 {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 1.25rem 0 0.5rem 0;
+    font-weight: 600;
+}
+
+.tab-content h5,
+.tab-content h6 {
+    font-size: 1rem;
+    color: #666;
+    margin: 1rem 0 0.5rem 0;
+    font-weight: 600;
+}
+
+/* Paragraphs */
+.tab-content p {
+    margin: 1rem 0;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* Lists */
+.tab-content ul,
+.tab-content ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.tab-content ul {
+    list-style-type: disc;
+}
+
+.tab-content ol {
+    list-style-type: decimal;
+}
+
+.tab-content li {
+    margin: 0.5rem 0;
+    line-height: 1.7;
+    color: #444;
+}
+
+.tab-content li ul,
+.tab-content li ol {
+    margin: 0.5rem 0;
+}
+
+.tab-content li ul {
+    list-style-type: circle;
+}
+
+.tab-content li li ul {
+    list-style-type: square;
+}
+
+/* Blockquotes */
+.tab-content blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(118, 75, 162, 0.08));
+    border-left: 4px solid #667eea;
+    border-radius: 0 12px 12px 0;
+    font-style: italic;
+    color: #555;
+}
+
+.tab-content blockquote p {
+    margin: 0.5rem 0;
+}
+
+.tab-content blockquote p:first-child {
+    margin-top: 0;
+}
+
+.tab-content blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* Code - Inline */
+.tab-content code {
+    background: #f4f4f8;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+    font-size: 0.9em;
+    color: #667eea;
+}
+
+/* Code - Block */
+.tab-content pre {
+    margin: 1.5rem 0;
+    padding: 1.25rem;
+    background: #1e1e2e;
+    border-radius: 12px;
+    overflow-x: auto;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.tab-content pre code {
+    background: none;
+    padding: 0;
+    color: #cdd6f4;
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+/* Tables */
+.tab-content table {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.tab-content thead {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.tab-content th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.tab-content td {
+    padding: 0.875rem 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.tab-content tbody tr:nth-child(even) {
+    background: #f9f9fb;
+}
+
+.tab-content tbody tr:hover {
+    background: rgba(102, 126, 234, 0.05);
+}
+
+/* Horizontal Rules */
+.tab-content hr {
+    margin: 2.5rem 0;
+    border: none;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #667eea, #764ba2, transparent);
+    border-radius: 2px;
+}
+
+/* Links in content */
+.tab-content a {
+    color: #667eea;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.tab-content a:hover {
+    color: #764ba2;
+    border-bottom-color: #764ba2;
+}
+
+/* Strong and Emphasis */
+.tab-content strong {
+    font-weight: 600;
+    color: #333;
+}
+
+.tab-content em {
+    font-style: italic;
+    color: #555;
+}
+
+/* Images in content */
+.tab-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Definition Lists */
+.tab-content dl {
+    margin: 1rem 0;
+}
+
+.tab-content dt {
+    font-weight: 600;
+    color: #333;
+    margin-top: 1rem;
+}
+
+.tab-content dd {
+    margin-left: 1.5rem;
+    color: #555;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
