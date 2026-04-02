@@ -13,6 +13,7 @@ title: Blog
         <h3>📝 Blog Coming Soon</h3>
         <p>Stay tuned for regular posts about research, technology, and academic life</p>
         <p class="coming-soon">New content will be published here regularly</p>
+        <p> A cool post from Dr. Eduardo da Veiga Beltrame: https://munfred.com/gradschool </p>
     </div>
 </div>
 
