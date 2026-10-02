@@ -76,7 +76,10 @@ freshness.
 
 ### R9. Trust hygiene
 A real photo, a real contact route, honest titles (a student is a student), dated content, no
-more personal data than needed (no phone number, no home address), consistent links.
+more personal data than needed (no phone number, no home address), consistent links. Email
+addresses are click-to-reveal and never appear as `name@domain` in the page source or the
+repository, which defeats the common regex harvesters (it is not protection against a determined
+human or a bot that performs a real click).
 Tracking is off by default; a site without trackers needs no cookie banner.
 
 ### R10. Longevity and ownership

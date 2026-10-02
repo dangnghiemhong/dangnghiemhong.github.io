@@ -47,13 +47,56 @@
   document.addEventListener('click', function (e) {
     var btn = e.target.closest && e.target.closest('.copy-btn');
     if (!btn) return;
-    var pre = $('pre', btn.closest('.copyable'));
+    var holder = btn.closest('.copyable');
+    var pre = holder && $('pre', holder);
     if (!pre) return;
     copyText(pre.innerText.replace(/\n$/, '')).then(function () {
       var label = btn.textContent; btn.textContent = 'Copied'; btn.classList.add('is-done');
       setTimeout(function () { btn.textContent = label; btn.classList.remove('is-done'); }, 1600);
     }, function () { btn.textContent = 'Press Ctrl+C'; });
   });
+
+  /* ── Click-to-reveal email ────────────────────────────────────────────────
+     Addresses live in a JSON island as separate `user` / `domain` parts, so no "name@domain"
+     string is present in the page source. They are joined here, only after a real user click
+     (script-dispatched clicks have isTrusted === false and are ignored). */
+  (function email() {
+    var island = $('#contact-data');
+    if (!island) return;
+    var contacts;
+    try { contacts = JSON.parse(island.textContent); } catch (e) { return; }
+    function build(box) {
+      var ul = document.createElement('ul'); ul.className = 'email-list';
+      contacts.forEach(function (c) {
+        var addr = c.user + '\u0040' + c.domain;
+        var li = document.createElement('li');
+        var label = document.createElement('span'); label.className = 'email-label'; label.textContent = c.label;
+        var a = document.createElement('a'); a.href = 'mailto:' + addr; a.textContent = addr;
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'email-copy'; b.textContent = 'Copy';
+        b.setAttribute('aria-label', 'Copy ' + c.label + ' email address');
+        b.addEventListener('click', function () {
+          copyText(addr).then(function () {
+            b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1600);
+          }, function () { b.textContent = 'Select and copy'; });
+        });
+        li.appendChild(label); li.appendChild(a); li.appendChild(b); ul.appendChild(li);
+      });
+      box.appendChild(ul);
+    }
+    $$('[data-email-reveal]').forEach(function (btn) {
+      var box = document.getElementById(btn.getAttribute('aria-controls'));
+      if (!box) return;
+      btn.addEventListener('click', function (e) {
+        if (!e.isTrusted) return;
+        var opening = box.hidden;
+        if (opening && !box.firstChild) build(box);
+        box.hidden = !opening;
+        btn.setAttribute('aria-expanded', String(opening));
+        if (opening) { var first = $('a', box); if (first) first.focus(); }
+      });
+    });
+  })();
 
   /* ── Prose enhancements (posts, projects) ─────────────────────────────── */
   $$('[data-prose]').forEach(function (prose) {

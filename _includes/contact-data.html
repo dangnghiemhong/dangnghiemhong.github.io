@@ -1,0 +1,7 @@
+{%- comment -%}
+  Contact data for the click-to-reveal button. Parts are kept separate on purpose: the "@" is
+  added by site.js at click time, so no "name@domain" string exists anywhere in the page source.
+{%- endcomment -%}
+{%- if site.data.profile.contacts.size > 0 -%}
+<script type="application/json" id="contact-data">{{ site.data.profile.contacts | jsonify }}</script>
+{%- endif -%}

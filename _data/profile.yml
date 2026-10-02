@@ -5,12 +5,14 @@
 # ─────────────────────────────────────────────────────────────────────────────
 
 name: Dang Hong Nghiem
-native_name: Nghiêm Hồng Đăng       # shown under the name; set to "" to hide
+also_known_as: Hong-Dang Nghiem     # shown under the name; set to "" to hide
 repo: dangnghiemhong/dangnghiemhong.github.io   # used for "Suggest an edit" links
 
 # Spellings under which your name appears in author lists (they get highlighted
 # in the publication list). Add any variant you publish under.
 name_variants:
+  - Hong-Dang Nghiem
+  - H.-D. Nghiem
   - Nghiem Hong Dang
   - Dang H. Nghiem
   - D. H. Nghiem
@@ -38,8 +40,18 @@ interests:
   - title: Clinical data × physics-based simulation
     text: Combining patient measurements with mechanistic simulation.
 
-# Contact. Shown on the home page and in the footer.
-email: nghiemhongdang@gmail.com
+# Contact. Email addresses are click-to-reveal and are NEVER written as "name@domain" in this
+# repository or in the published HTML (that is what spam crawlers look for). Each address is
+# stored as two parts and only joined in the visitor's browser when they click "Contact me".
+# To change one: edit `user` (before the @) and `domain` (after it). Keep the most
+# important address first. Delete the whole `contacts` list to remove the contact button.
+contacts:
+  - label: IP Paris
+    user: hong.nghiem
+    domain: ip-paris.fr
+  - label: Personal
+    user: nghiemhongdang
+    domain: gmail.com
 photo: /assets/img/profile.jpg
 photo_alt: Portrait of Dang Hong Nghiem
 

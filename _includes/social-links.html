@@ -1,12 +1,12 @@
 {%- comment -%}
-  Icon row from _data/profile.yml (email + links). Usage: {% include social-links.html %}
+  Icon row from _data/profile.yml `links`. (Email is click-to-reveal, see reveal-email.html.)
+  Usage: {% include social-links.html %}
 {%- endcomment -%}
 {%- assign profile = site.data.profile -%}
-<ul class="socials" aria-label="Profiles and contact">
-  {%- if profile.email != blank %}
-  <li><a class="social" href="mailto:{{ profile.email }}" aria-label="Email" title="Email">{% include icon.html name="mail" %}</a></li>
-  {%- endif %}
+{%- if profile.links.size > 0 %}
+<ul class="socials" aria-label="Profiles">
   {%- for link in profile.links %}
   <li><a class="social" href="{{ link.url }}" rel="me noopener" aria-label="{{ link.label | escape }}" title="{{ link.label | escape }}">{% include icon.html name=link.icon %}</a></li>
   {%- endfor %}
 </ul>
+{%- endif %}

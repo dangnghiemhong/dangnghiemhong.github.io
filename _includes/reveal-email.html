@@ -1,0 +1,9 @@
+{%- comment -%}
+  Click-to-reveal email button. The address is NOT in the HTML: see `contacts` in _data/profile.yml.
+  Usage: {% include reveal-email.html id="hero" label="Contact me" class="btn btn-primary" %}
+         then, where the address should appear: {% include email-box.html id="hero" %}
+  Without JavaScript the button is hidden and email-box.html shows a short note instead.
+{%- endcomment -%}
+{%- if site.data.profile.contacts.size > 0 -%}
+<button type="button" class="{{ include.class }} reveal-btn" data-email-reveal aria-expanded="false" aria-controls="email-{{ include.id }}">{% include icon.html name="mail" %}{{ include.label }}</button>
+{%- endif -%}

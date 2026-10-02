@@ -10,7 +10,7 @@ Live at <https://dangnghiemhong.github.io>. Built with Jekyll and served by GitH
 
 | You want to change… | Edit this |
 |---|---|
-| Name, bio, photo, email, profile links, research-interest cards | [`_data/profile.yml`](_data/profile.yml) |
+| Name, bio, photo, contact emails, profile links, research-interest cards | [`_data/profile.yml`](_data/profile.yml) |
 | Education / experience | [`_data/education.yml`](_data/education.yml), [`_data/experience.yml`](_data/experience.yml) |
 | Publications (page + home section appear on first entry) | [`_data/publications.yml`](_data/publications.yml) |
 | News items on the home page | [`_data/news.yml`](_data/news.yml) |
@@ -44,6 +44,14 @@ For every link type, use a key from `_data/link_types.yml`; to support a new one
 
 **Upload a CV.** Add the file as `assets/files/cv.pdf`; a *Download PDF* button appears on `/cv/` automatically.
 The CV page itself is generated from your data files, and prints cleanly (Ctrl/Cmd+P).
+
+**Change or add an email address.** Edit the `contacts` list in `_data/profile.yml`. Each address is stored as
+two fields, `user` (before the `@`) and `domain` (after it), **never as `name@domain`**. Visitors see the
+address only after clicking *Contact me* / *Show email*; it is assembled in their browser, and clicks fired
+by scripts are ignored. This stops the common harvesters that regex-scan pages and repositories for `x@y.z`.
+It is not a guarantee: a human, or a bot that renders the page *and* performs a real click, can still read it.
+It also cannot remove an address from places it already is (see the note on git history below). Do not
+write the full address anywhere else in the repository (README, posts, YAML comments), or the protection is lost.
 
 **Add a profile link** (LinkedIn, Google Scholar, ORCID, Hugging Face …): uncomment the matching block in
 `_data/profile.yml`. It appears in the hero, the footer and the search-engine metadata.
@@ -84,6 +92,13 @@ bundle exec htmlproofer ./_site --disable-external
 - Fonts (Inter, Source Serif 4, JetBrains Mono), KaTeX and icons are self-hosted in `assets/`; the site makes
   **no third-party requests**. Icons come from [Simple Icons](https://simpleicons.org) (CC0) and [Lucide](https://lucide.dev) (ISC); to add one,
   append a `<symbol id="i-name">` to `assets/img/icons.svg`.
+
+## Privacy note: old email addresses in git history
+
+Git history is public and permanent. The previous site published a Gmail address in plain text, and some
+commits made from a local machine carry the committer's email in their metadata. Rewriting history would
+break forks and clones, so it was not done. To stop future leaks, in GitHub → *Settings → Emails* turn on
+**Keep my email addresses private** and **Block command line pushes that expose my email**.
 
 ## Moving off Jekyll later
 

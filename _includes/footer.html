@@ -3,7 +3,9 @@
   <div class="wrap footer-inner">
     <div class="footer-left">
       <p class="footer-name">{{ profile.name }}</p>
-      <p class="footer-sub">{{ profile.eyebrow }}{% if profile.email != blank %} · <a href="mailto:{{ profile.email }}">{{ profile.email }}</a>{% endif %}</p>
+      <p class="footer-sub">{{ profile.eyebrow }}</p>
+      <div class="footer-contact">{% include reveal-email.html id="footer" label="Show email" class="btn btn-sm" %}</div>
+      {% include email-box.html id="footer" %}
     </div>
     <div class="footer-right">
       {% include social-links.html %}
@@ -19,4 +21,5 @@
       </p>
     </div>
   </div>
+  {% include contact-data.html %}
 </footer>

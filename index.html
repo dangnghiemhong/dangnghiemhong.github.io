@@ -10,15 +10,16 @@ description: Master's student in Data & AI at Institut Polytechnique de Paris. D
       <p class="eyebrow-pill">{% include icon.html name="graduation-cap" %}<span>{{ profile.eyebrow }}</span></p>
       {%- endif %}
       <h1 class="hero-name">{{ profile.name }}</h1>
-      {%- if profile.native_name != blank %}
-      <p class="hero-native" lang="vi">{{ profile.native_name }}</p>
+      {%- if profile.also_known_as != blank %}
+      <p class="hero-aka">{{ profile.also_known_as }}</p>
       {%- endif %}
       <div class="hero-bio">{{ profile.bio | markdownify }}</div>
       <div class="hero-actions">
-        {%- if profile.email != blank %}<a class="btn btn-primary" href="mailto:{{ profile.email }}">{% include icon.html name="mail" %}Contact me</a>{% endif %}
+        {% include reveal-email.html id="hero" label="Contact me" class="btn btn-primary" %}
         <a class="btn" href="{{ '/cv/' | relative_url }}">{% include icon.html name="file-text" %}CV</a>
         {%- if site.posts.size > 0 %}<a class="btn btn-ghost" href="{{ '/blog/' | relative_url }}">Read the blog {% include icon.html name="arrow-right" %}</a>{% endif %}
       </div>
+      {% include email-box.html id="hero" %}
       {% include social-links.html %}
     </div>
     {%- if profile.photo != blank %}

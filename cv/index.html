@@ -10,8 +10,9 @@ permalink: /cv/
 <div class="cv">
   <div class="cv-actions">
     {%- if cv_pdf.size > 0 %}<a class="btn btn-primary" href="{{ '/assets/files/cv.pdf' | relative_url }}">{% include icon.html name="download" %}Download PDF</a>{% endif %}
-    {%- if profile.email != blank %}<a class="btn" href="mailto:{{ profile.email }}">{% include icon.html name="mail" %}{{ profile.email }}</a>{% endif %}
+    {% include reveal-email.html id="cv" label="Show email" class="btn" %}
   </div>
+  {% include email-box.html id="cv" %}
 
   {%- if site.data.education.size > 0 %}
   <section class="cv-section"><h2 class="cv-h">Education</h2>{% include timeline.html items=site.data.education kind="education" %}</section>
