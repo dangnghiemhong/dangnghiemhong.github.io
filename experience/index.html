@@ -7,10 +7,10 @@ permalink: /experience/
 ---
 <div class="cv experience">
   {%- if site.data.experience.size > 0 %}
-  <section class="cv-section"><h2 class="cv-h">Research experience</h2>{% include timeline.html items=site.data.experience kind="experience" %}</section>
+  <section class="cv-section"><h2 class="cv-h">Research experience</h2>{% include timeline.html items=site.data.experience kind="experience" intro=true %}</section>
   {%- endif %}
   {%- if site.data.education.size > 0 %}
-  <section class="cv-section"><h2 class="cv-h">Education</h2>{% include timeline.html items=site.data.education kind="education" %}</section>
+  <section class="cv-section"><h2 class="cv-h">Education</h2>{% include timeline.html items=site.data.education kind="education" intro=true %}</section>
   {%- endif %}
   {%- if site.data.awards.size > 0 %}
   <section class="cv-section"><h2 class="cv-h">Honors &amp; scholarships</h2>

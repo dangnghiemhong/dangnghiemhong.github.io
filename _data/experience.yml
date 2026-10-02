@@ -1,14 +1,17 @@
-# Research / work experience, newest first. Shown on the home page (compact), /experience/ and the CV.
-# Fields: organization, url, detail (one line about the organisation), role, period,
+# Research / work experience, newest first.
+#   home page  → organisation, role, period only (compact)
+#   /experience/ → + `detail` and the one-line `summary`  (keep it short and plain)
+#   /cv/       → + the `details` bullet points (the only place for numbers and technical depth)
+# Fields: organization, url, detail (one short line about the organisation), role, period,
 #         current (true shows a "Current" badge), location,
-#         description (Markdown, one sentence), details (bullet points, Markdown allowed).
+#         summary (Markdown, ONE sentence), details (bullet points, Markdown allowed).
 # `period` is optional: omit it rather than guessing a date.
 - organization: PASSIO Lab
   detail: North Carolina A&T State University & Harvard Medical School (BIDMC)
   role: Research Assistant
   period: Aug 2025 – Sep 2026
   location: Remote
-  description: Research assistant on [The Living Heart Project](https://www.3ds.com/heart).
+  summary: "Cardiac AI on [The Living Heart Project](https://www.3ds.com/heart): ECG foundation models, physics-informed digital twins of the heart, and an LLM agent that plans model validation."
   details:
     - "Adapted an ECG foundation model to echo-confirmed disease screening on 100,000 ECG–echocardiogram pairs (EchoNext): continued self-supervised pretraining plus layer-wise partial fine-tuning reached 0.851 macro-AUROC / 0.426 AUPRC over 6 labels, beating XGBoost (0.802), ResNet1D (0.825), frozen-encoder transfer (0.823) and LoRA (0.820), and beating full fine-tuning on F1 (0.369 vs 0.342) while updating only 41.5M parameters."
     - "Showed unified multi-label training beats 6 task-specific binary models (F1 0.369 vs 0.277) and that downsampling all-negative training records lifts F1 to 0.410, a simple operating-point knob for compute-aware clinical triage."
@@ -16,10 +19,11 @@
     - "Reconstructed left-ventricular pressure–volume loops noninvasively from echocardiography: a physics-informed self-supervised pipeline coupling Windkessel constraints with Dassault Systèmes' SIMULIA Living Heart simulations, plus a high-fidelity mitral valve model, validated with Harvard Medical School cardiac surgeons."
 
 - organization: New Turing Institute
-  detail: "GStar Program: a Silicon Valley-inspired research programme partnering with Google DeepMind and ViRx@Stanford"
+  detail: GStar Program
   role: Research Student (full scholarship)
   period: Aug 2025 – Dec 2025
   location: Remote
+  summary: "Research programme on LLM post-training: reinforcement learning (GRPO), test-time reasoning and GPU kernels (FlashAttention in Triton)."
   details:
     - "Built an end-to-end [GRPO / Dr-GRPO reinforcement-learning post-training pipeline](https://github.com/dangnghiemhong/GRPO-Counting-Problem) for Qwen3-1.7B on the Countdown number puzzle: reward function, group-normalised advantages, PPO-style clipped loss and memory-optimised vLLM sampling, with training-stability fixes over the baseline."
     - "Led the Parallel Thinking track on test-time reasoning: K = 32 parallel traces with DeepConf confidence-weighted voting and top-η% filtering reached 94% accuracy on the 5,409-problem HARP competition-mathematics benchmark."
@@ -32,6 +36,7 @@
   role: Research Assistant & Teaching Assistant
   period: Mar 2023 – Jul 2025
   location: Hanoi, Vietnam
+  summary: "Deep learning for GNSS spoofing detection, deployed on an edge device. Also teaching assistant for signal processing and programming."
   details:
     - "Built a two-stage CNN + DBSCAN GNSS spoofing detector reaching 97.85% accuracy on the TEXBAT benchmark, above a prior PhD-dissertation baseline, and deployed it on an NVIDIA Jetson edge device."
     - "Assisted my supervisor in guiding 2 undergraduate thesis students to final grades A and B+, and taught DSP plus C/C++/Python onboarding for junior lab members."
@@ -40,5 +45,6 @@
   role: Research Student
   period: Jul 2024 – Jul 2025
   location: Remote
+  summary: "Research on scaling laws and synthetic data for large-scale image training."
   details:
     - "Investigated scaling laws and data saturation on a 65M-image corpus; built an automated CNN-ensemble synthetic-data pipeline to widen distribution coverage for large-scale training."
