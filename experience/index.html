@@ -1,0 +1,31 @@
+---
+layout: page
+title: Experience
+subtitle: Research positions, education and honours.
+description: "Research experience, education and honours of Dang Hong Nghiem: LLM post-training, ECG foundation models and GNSS spoofing detection."
+permalink: /experience/
+---
+<div class="cv experience">
+  {%- if site.data.experience.size > 0 %}
+  <section class="cv-section"><h2 class="cv-h">Research experience</h2>{% include timeline.html items=site.data.experience kind="experience" %}</section>
+  {%- endif %}
+  {%- if site.data.education.size > 0 %}
+  <section class="cv-section"><h2 class="cv-h">Education</h2>{% include timeline.html items=site.data.education kind="education" %}</section>
+  {%- endif %}
+  {%- if site.data.awards.size > 0 %}
+  <section class="cv-section"><h2 class="cv-h">Honors &amp; scholarships</h2>
+    <ul class="honors">
+      {%- for a in site.data.awards %}
+      <li>
+        <span class="honors-year">{{ a.year }}</span>
+        <div>
+          <p class="honors-title">{{ a.title | escape }}</p>
+          {%- if a.by %}<p class="honors-by">{{ a.by | escape }}</p>{% endif %}
+          {%- if a.text %}<p class="honors-text">{{ a.text | escape }}</p>{% endif %}
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endif %}
+</div>

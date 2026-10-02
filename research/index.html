@@ -1,0 +1,28 @@
+---
+layout: page
+title: Research
+subtitle: Publications, preprints and theses.
+description: Research and publications of Dang Hong Nghiem.
+permalink: /research/
+redirect_from:
+  - /publications/
+sitemap: false
+needs: publications
+---
+{%- comment -%}
+  Entries come from _data/publications.yml. This tab is always in the menu (owner's choice), so while
+  the list is empty the page says so and carries `noindex` (see head.html), so search engines skip it.
+{%- endcomment -%}
+{%- if site.data.publications.size > 0 %}
+{%- assign by_year = site.data.publications | group_by: "year" %}
+{%- for g in by_year %}
+<section class="year-group">
+  <h2 class="year">{{ g.name }}</h2>
+  <div class="pubs">
+    {%- for pub in g.items %}{% include publication.html pub=pub %}{% endfor %}
+  </div>
+</section>
+{%- endfor %}
+{%- else %}
+<p class="empty-note">Publications and research write-ups will be listed here.</p>
+{%- endif %}

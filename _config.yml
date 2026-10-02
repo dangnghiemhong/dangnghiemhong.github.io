@@ -6,8 +6,8 @@
 title: Dang Hong Nghiem
 tagline: MSc student in Data & AI at IP Paris   # used in the home-page <title>
 description: >-
-  Master's student in Data & AI at Institut Polytechnique de Paris. Deep learning,
-  computational modeling and data-driven digital twins for human health.
+  Master's student in Data & AI at Institut Polytechnique de Paris. LLM post-training,
+  reinforcement learning, test-time reasoning and agentic systems.
 
 url: "https://dangnghiemhong.github.io"
 baseurl: ""            # keep empty for a user site (<username>.github.io)

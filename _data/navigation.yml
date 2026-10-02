@@ -1,12 +1,14 @@
 # Main navigation, in display order.
 # `requires` hides an item until its content exists, so the menu never links to an empty page.
-#   requires: publications  → shown once _data/publications.yml has entries
 #   requires: projects      → shown once _projects/ has entries
 #   requires: posts         → shown once _posts/ has entries
+# Items without `requires` are always shown. "Research" is always shown on purpose (owner's choice):
+# its page says so until the first entry is added to _data/publications.yml.
 # To add a page, create it with `permalink:` and add a line here.
-- title: Publications
-  url: /publications/
-  requires: publications
+- title: Research
+  url: /research/
+- title: Experience
+  url: /experience/
 - title: Projects
   url: /projects/
   requires: projects

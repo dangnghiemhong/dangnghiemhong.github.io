@@ -1,7 +1,25 @@
-# Awards, scholarships and honours for the CV page, newest first.
-# The section appears automatically once this file contains an entry.
-#
-# - title: "Scholarship or award name"
-#   by: "Awarding body"
-#   year: 2026
-#   text: "Optional one-line context."
+# Awards, scholarships and honours, newest first. Shown on /experience/ and the CV.
+# Fields: title, by (awarding body), year, text (optional one-line context).
+- title: Paul Dudley White International Scholar Award
+  by: American Heart Association
+  year: 2026
+  text: Highest-ranked abstract from Vietnam.
+- title: Excellence Scholarship
+  by: PR[AI]RIE (Paris AI Research Institute) with PSL University
+  year: 2026
+  text: PR[AI]RIE is one of France's four national 3IA AI institutes.
+- title: International Master's Scholarship (IDEX)
+  by: Université Paris-Saclay
+  year: 2026
+  text: Nomination-only; awarded by jury.
+- title: Excellence Scholarship
+  by: Institut Polytechnique de Paris
+  year: 2026
+  text: For the two-year master's programme.
+- title: Full Scholarship, NTI Global Talent Program
+  by: New Turing Institute
+  year: 2025
+- title: Best Thesis and Best Presentation Awards
+  by: HUST graduation defence
+  year: 2025
+  text: Highest defence score in the committee.

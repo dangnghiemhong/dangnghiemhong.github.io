@@ -21,24 +21,31 @@ name_variants:
 # Small line above your name on the home page.
 eyebrow: "MSc student · Data & AI · IP Paris"
 
+# One line under the name on the CV page and in search results.
+headline: "LLM post-training: reinforcement learning · test-time reasoning · agentic systems"
+location: Paris, France          # city only; shown on the CV page
+
 # Short bio shown in the hero. Markdown is allowed (links, **bold**).
 bio: >-
   I'm a Master's student in Data & Artificial Intelligence at
   [Institut Polytechnique de Paris](https://www.ip-paris.fr/en).
-  My research interests are deep learning, computational modeling, and creating
-  data-driven digital twins of human health by integrating clinical data with
-  physics-based simulations.
+  I work on LLM post-training: reinforcement learning (GRPO), test-time reasoning
+  and agentic systems. My earlier research covers foundation models and
+  physics-informed digital twins for cardiac health (PASSIO Lab, with Harvard
+  Medical School) and deep learning for GNSS spoofing detection (HUST).
 
 # Research interests: shown as cards on the home page. Add, remove or reword freely.
 interests:
-  - title: Deep learning
-    text: Learning-based models for complex, high-dimensional data.
-  - title: Computational modeling
-    text: Mathematical and numerical models of complex systems.
-  - title: Digital twins for human health
-    text: Data-driven, patient-specific models of the human body.
-  - title: Clinical data × physics-based simulation
-    text: Combining patient measurements with mechanistic simulation.
+  - title: LLM post-training & RL
+    text: Reinforcement-learning pipelines (GRPO, Dr-GRPO) with reward shaping for mathematical reasoning.
+  - title: Test-time reasoning
+    text: Spending more compute at inference, with parallel thinking and confidence-weighted voting.
+  - title: Agentic systems
+    text: LLM agents that plan, call tools and explain their decisions.
+  - title: Efficient LLM systems
+    text: GPU kernels and memory-efficient sampling, from FlashAttention-2 in Triton to vLLM.
+  - title: AI for cardiovascular health
+    text: ECG foundation models and physics-informed digital twins of the heart.
 
 # Contact. Email addresses are click-to-reveal and are NEVER written as "name@domain" in this
 # repository or in the published HTML (that is what spam crawlers look for). Each address is
@@ -63,9 +70,9 @@ links:
   - label: GitHub
     icon: github
     url: https://github.com/dangnghiemhong
-  # - label: LinkedIn
-  #   icon: linkedin
-  #   url: https://www.linkedin.com/in/YOUR-HANDLE/
+  - label: LinkedIn
+    icon: linkedin
+    url: https://www.linkedin.com/in/dangnghiemhong
   # - label: Google Scholar
   #   icon: googlescholar
   #   url: https://scholar.google.com/citations?user=YOUR-ID

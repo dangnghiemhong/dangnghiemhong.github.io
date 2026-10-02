@@ -37,7 +37,7 @@ with a README is signal. Skill bars and self-rated percentages are meaningless a
 ### R3. Honest completeness
 No "coming soon", no empty sections, no placeholder text, no dead links. A section appears when
 it has content and is invisible otherwise. An empty section reads as abandonment.
-*Test:* the build renders no section with zero entries; `htmlproofer` (see the README) reports no broken internal links before you publish. There is no CI, so this is a manual step.
+*Test:* the build renders no section with zero entries (one deliberate exception, the always-visible Research tab, is `noindex` while empty); `htmlproofer` (see the README) reports no broken internal links before you publish. There is no CI, so this is a manual step.
 
 ### R4. Fast and light
 Static pages, no framework runtime, no third-party requests (fonts, scripts and icons are

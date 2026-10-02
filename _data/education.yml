@@ -1,13 +1,23 @@
-# Education, newest first. Shown on the home page and the CV.
-# Fields: institution, url, degree, degree_url, period, current (true shows a "Current" badge),
-#         location, details (list of bullet points: thesis, GPA, honours, relevant courses).
+# Education, newest first. Shown on the home page (compact), /experience/ and the CV.
+# Fields: institution, url, detail (one line about the institution), degree, degree_url, period,
+#         current (true shows a "Current" badge), location, details (bullet points).
 # `period` is optional: omit it rather than guessing a date.
 - institution: Institut Polytechnique de Paris
   url: https://www.ip-paris.fr/en
-  degree: "Master's in Data & Artificial Intelligence (DataAI)"
+  detail: Télécom Paris & École Polytechnique
+  degree: "Master of Science in Data and Artificial Intelligence (DataAI)"
   degree_url: https://www.ip-paris.fr/en/education/masters/computer-science-program/major-data-and-artificial-intelligence-dataai
+  period: Sep 2026 – Aug 2028
+  location: Palaiseau, France
   current: true
+  details:
+    - "Awarded three competing French excellence scholarships (PR[AI]RIE with PSL University, Université Paris-Saclay IDEX, IP Paris Excellence Scholarship); chose DataAI at IP Paris to stay aligned with research in LLM post-training, reasoning and agentic systems."
 
 - institution: Hanoi University of Science and Technology (HUST)
   url: https://en.hust.edu.vn/home
-  degree: Engineer's Degree in Information Technology
+  degree: "Engineer's Degree in Information Technology (5-year programme with La Trobe University, Australia)"
+  period: Sep 2020 – Sep 2025
+  location: Hanoi, Vietnam
+  details:
+    - "Thesis “Deep Learning for GNSS Spoofing Detection”: Best Thesis and Best Presentation Awards, with the highest defence score in the committee."
+    - "Relevant coursework: Machine Learning, Probability & Statistics, Optimisation, Linear Algebra, Data Structures & Algorithms, Parallel Programming."

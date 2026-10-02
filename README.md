@@ -11,10 +11,12 @@ Live at <https://dangnghiemhong.github.io>. Built with Jekyll and served by GitH
 | You want to change… | Edit this |
 |---|---|
 | Name, bio, photo, contact emails, profile links, research-interest cards | [`_data/profile.yml`](_data/profile.yml) |
-| Education / experience | [`_data/education.yml`](_data/education.yml), [`_data/experience.yml`](_data/experience.yml) |
-| Publications (page + home section appear on first entry) | [`_data/publications.yml`](_data/publications.yml) |
+| Education, experience (home page, `/experience/`, CV) | [`_data/education.yml`](_data/education.yml), [`_data/experience.yml`](_data/experience.yml) |
+| Honours & scholarships (`/experience/`, CV) | [`_data/awards.yml`](_data/awards.yml) |
+| Skills (home "Toolbox" + CV; `hide_on_home: true` keeps a group on the CV only) | [`_data/skills.yml`](_data/skills.yml) |
+| Research tab / publications (the tab is always in the menu; entries appear as you add them) | [`_data/publications.yml`](_data/publications.yml) |
 | News items on the home page | [`_data/news.yml`](_data/news.yml) |
-| CV extras: skills, awards, talks | [`_data/skills.yml`](_data/skills.yml), [`awards.yml`](_data/awards.yml), [`talks.yml`](_data/talks.yml) |
+| Talks (CV) | [`_data/talks.yml`](_data/talks.yml) |
 | Blog posts | `_posts/` (template: [`_templates/post.md`](_templates/post.md)) |
 | Projects | `_projects/` (template: [`_templates/project.md`](_templates/project.md)) |
 | Menu items | [`_data/navigation.yml`](_data/navigation.yml) |
@@ -22,9 +24,12 @@ Live at <https://dangnghiemhong.github.io>. Built with Jekyll and served by GitH
 | Colours, fonts, spacing | tokens at the top of [`assets/css/main.css`](assets/css/main.css) |
 | Site title, URL, plugins | [`_config.yml`](_config.yml) |
 
-**Sections hide themselves when empty.** The *Publications* and *Projects* menu items, and the News /
-Projects / Publications blocks on the home page, appear automatically the moment you add the first entry.
-There are no "coming soon" placeholders by design.
+**Sections hide themselves when empty.** The *Projects* menu item, and the News / Projects / Publications
+blocks on the home page, appear automatically the moment you add the first entry. The one deliberate exception
+is the **Research** tab: it is always in the menu, and until `_data/publications.yml` has its first entry the page
+says that publications will be listed there and carries `noindex` so search engines skip it. Once you add an entry the
+list appears and `noindex` disappears by itself (remove `sitemap: false` from `research/index.html` if you want the page
+in the sitemap).
 
 ## Everyday tasks (all doable in GitHub's web editor)
 

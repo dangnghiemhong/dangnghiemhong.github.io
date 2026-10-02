@@ -1,6 +1,7 @@
 {%- comment -%}
   Vertical timeline for education or experience.
   Usage: {% include timeline.html items=site.data.education kind="education" %}
+         add compact=true to hide the note, description and bullet points (home page).
 {%- endcomment -%}
 <ol class="timeline">
   {%- for it in include.items %}
@@ -18,12 +19,14 @@
     <p class="timeline-sub">{% if it.degree_url %}<a href="{{ it.degree_url }}">{{ it.degree | escape }}</a>{% else %}{{ it.degree | escape }}{% endif %}{% if it.location %} · {{ it.location | escape }}{% endif %}</p>
     {%- else %}
     <p class="timeline-sub">{{ it.role | escape }}{% if it.location %} · {{ it.location | escape }}{% endif %}</p>
+    {%- endif %}
+    {%- unless include.compact %}
     {%- if it.detail %}<p class="timeline-note">{{ it.detail | escape }}</p>{% endif %}
     {%- if it.description %}<div class="timeline-desc">{{ it.description | markdownify }}</div>{% endif %}
-    {%- endif %}
     {%- if it.details.size > 0 %}
     <ul class="timeline-list">{% for d in it.details %}<li>{{ d | markdownify | remove: '<p>' | remove: '</p>' }}</li>{% endfor %}</ul>
     {%- endif %}
+    {%- endunless %}
   </li>
   {%- endfor %}
 </ol>

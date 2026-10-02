@@ -1,6 +1,6 @@
 ---
 layout: default
-description: Master's student in Data & AI at Institut Polytechnique de Paris. Deep learning, computational modeling and data-driven digital twins for human health.
+description: Master's student in Data & AI at Institut Polytechnique de Paris. LLM post-training, reinforcement learning, test-time reasoning and agentic systems.
 ---
 {%- assign profile = site.data.profile -%}
 <section class="hero">
@@ -83,7 +83,7 @@ description: Master's student in Data & AI at Institut Polytechnique de Paris. D
   <div class="wrap">
     <div class="section-head">
       <h2 class="section-title" id="h-pubs">Selected publications</h2>
-      <a class="section-more" href="{{ '/publications/' | relative_url }}">All publications {% include icon.html name="arrow-right" %}</a>
+      <a class="section-more" href="{{ '/research/' | relative_url }}">All publications {% include icon.html name="arrow-right" %}</a>
     </div>
     <div class="pubs">
       {%- for pub in featured_pubs limit: 4 %}{% include publication.html pub=pub %}{% endfor %}
@@ -97,22 +97,41 @@ description: Master's student in Data & AI at Institut Polytechnique de Paris. D
   <div class="wrap">
     <div class="section-head">
       <h2 class="section-title" id="h-background">Background</h2>
-      <a class="section-more" href="{{ '/cv/' | relative_url }}">Full CV {% include icon.html name="arrow-right" %}</a>
+      <a class="section-more" href="{{ '/experience/' | relative_url }}">Full experience {% include icon.html name="arrow-right" %}</a>
     </div>
     <div class="two-col">
       {%- if site.data.education.size > 0 %}
       <div>
         <h3 class="col-title">{% include icon.html name="graduation-cap" %}Education</h3>
-        {% include timeline.html items=site.data.education kind="education" %}
+        {% include timeline.html items=site.data.education kind="education" compact=true %}
       </div>
       {%- endif %}
       {%- if site.data.experience.size > 0 %}
       <div>
         <h3 class="col-title">{% include icon.html name="briefcase" %}Experience</h3>
-        {% include timeline.html items=site.data.experience kind="experience" %}
+        {% include timeline.html items=site.data.experience kind="experience" compact=true %}
       </div>
       {%- endif %}
     </div>
+  </div>
+</section>
+{%- endif %}
+
+{%- if site.data.skills.size > 0 %}
+<section class="section" aria-labelledby="h-toolbox">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title" id="h-toolbox">Toolbox</h2>
+      <a class="section-more" href="{{ '/cv/' | relative_url }}">Full CV {% include icon.html name="arrow-right" %}</a>
+    </div>
+    <dl class="toolbox">
+      {%- for s in site.data.skills %}{% unless s.hide_on_home %}
+      <div class="toolbox-row">
+        <dt>{{ s.group }}</dt>
+        <dd><ul class="tags">{% for i in s.items %}<li><span class="tag">{{ i }}</span></li>{% endfor %}</ul></dd>
+      </div>
+      {%- endunless %}{% endfor %}
+    </dl>
   </div>
 </section>
 {%- endif %}

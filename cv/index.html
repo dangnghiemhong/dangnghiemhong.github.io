@@ -1,13 +1,15 @@
 ---
 layout: page
 title: Curriculum Vitae
-subtitle: Education, experience and selected work.
-description: "Curriculum vitae of Dang Hong Nghiem: education, experience, publications, skills and awards."
+subtitle: Education, research experience, skills and honours.
+description: "Curriculum vitae of Dang Hong Nghiem: education, research experience, skills, honours and talks."
 permalink: /cv/
 ---
 {%- assign profile = site.data.profile -%}
 {%- assign cv_pdf = site.static_files | where: "path", "/assets/files/cv.pdf" -%}
 <div class="cv">
+  {%- if profile.headline != blank %}<p class="cv-headline">{{ profile.headline }}</p>{% endif %}
+  {%- if profile.location != blank %}<p class="cv-meta">{% include icon.html name="map-pin" %}{{ profile.location }}</p>{% endif %}
   <div class="cv-actions">
     {%- if cv_pdf.size > 0 %}<a class="btn btn-primary" href="{{ '/assets/files/cv.pdf' | relative_url }}">{% include icon.html name="download" %}Download PDF</a>{% endif %}
     {% include reveal-email.html id="cv" label="Show email" class="btn" %}
@@ -45,7 +47,7 @@ permalink: /cv/
   {%- endif %}
 
   {%- if site.data.awards.size > 0 %}
-  <section class="cv-section"><h2 class="cv-h">Awards</h2>
+  <section class="cv-section"><h2 class="cv-h">Honors &amp; scholarships</h2>
     <ul class="cv-list">
       {%- for a in site.data.awards %}<li><strong>{{ a.title }}</strong>{% if a.by %}, {{ a.by }}{% endif %}{% if a.year %} ({{ a.year }}){% endif %}{% if a.text %}. {{ a.text }}{% endif %}</li>{% endfor %}
     </ul>
