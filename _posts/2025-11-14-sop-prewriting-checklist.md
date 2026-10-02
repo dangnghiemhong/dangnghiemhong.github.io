@@ -1,9 +1,13 @@
 ---
-layout: default
-title: SOP Checklist
+title: "SOP Pre-Writing Question Checklist"
+description: "Questions to answer for yourself before you start drafting a statement of purpose."
+date: 2025-11-14 23:16:43 +0700
+tags: [Grad applications, Checklist]
+series: "Statement of Purpose guide"
+series_order: 3
+redirect_from:
+  - /writing/checklist
 ---
-
-# SOP Pre-Writing Question Checklist
 
 Before drafting your Statement of Purpose, answer these questions for yourself.
 Use them as notes; you will not copy all answers directly into the essay.

@@ -1,32 +1,73 @@
-# Site Settings
+# ─────────────────────────────────────────────────────────────────────────────
+#  Site configuration.  Personal details live in _data/profile.yml, not here.
+#  Changes to THIS file need a rebuild (automatic on GitHub Pages after a push).
+# ─────────────────────────────────────────────────────────────────────────────
+
 title: Dang Hong Nghiem
-description: Research Assistant & Academic Writing Guide
-author: Dang Hong Nghiem
-email: nghiemhongdang@gmail.com
+tagline: MSc student in Data & AI at IP Paris   # used in the home-page <title>
+description: >-
+  Master's student in Data & AI at Institut Polytechnique de Paris. Deep learning,
+  computational modeling and data-driven digital twins for human health.
 
-# URL Settings
-baseurl: ""
 url: "https://dangnghiemhong.github.io"
+baseurl: ""            # keep empty for a user site (<username>.github.io)
+lang: en
+timezone: Europe/Paris
 
-# Build Settings
+author:
+  name: Dang Hong Nghiem
+
+# NOTE: do not add a `twitter:` key here. With no handle set, jekyll-seo-tag would emit a bogus
+# `twitter:site="@"` and use your display name as `twitter:creator`. The large-image card is
+# already the plugin's default whenever a page has an image (see the defaults below).
+
+# ── URLs ────────────────────────────────────────────────────────────────────
+# Posts live at /blog/<slug>/ (no date in the URL, so URLs never need to change).
+permalink: /blog/:title/
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  # Default social-preview image for every page (override per page with `image:` in front matter).
+  # jekyll-seo-tag only reads a page's own `image`, so a site-wide default must come from here.
+  - scope: { path: "" }
+    values: { image: /assets/img/og.jpg }
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+  - scope: { path: "", type: projects }
+    values: { layout: project }
+
+# ── Build ───────────────────────────────────────────────────────────────────
+# Only plugins on GitHub Pages' allow-list can be used with the native builder.
+plugins:
+  - jekyll-feed            # /feed.xml
+  - jekyll-seo-tag         # <title>, meta description, Open Graph, JSON-LD
+  - jekyll-sitemap         # /sitemap.xml
+  - jekyll-redirect-from   # `redirect_from:` keeps old URLs alive
+
+# The settings below are PINNED on purpose. GitHub Pages applies its own defaults
+# (future: true, theme: primer) and forces math_engine: mathjax. A plain local
+# `jekyll build` does not, so without pinning, local preview and production can differ.
+theme: ~                   # GitHub Pages defaults to the Primer theme; we ship our own
+future: false              # posts dated in the future stay hidden until their date
 markdown: kramdown
 highlighter: rouge
+kramdown:
+  input: GFM
+  math_engine: mathjax     # emits \( … \) and \[ … \]; KaTeX renders them client-side
+  syntax_highlighter: rouge
 
-# Plugins
-plugins:
-  - jekyll-seo-tag
-
-# Exclude from processing
+# Keep repository-only files out of the published site.
 exclude:
   - README.md
+  - docs
+  - scripts
   - Gemfile
   - Gemfile.lock
-  - node_modules
   - vendor
-
-# Default layout
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: default
+  - node_modules
+  - .github
+  - .gitignore

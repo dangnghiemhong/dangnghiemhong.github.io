@@ -1,0 +1,131 @@
+---
+layout: default
+description: Master's student in Data & AI at Institut Polytechnique de Paris. Deep learning, computational modeling and data-driven digital twins for human health.
+---
+{%- assign profile = site.data.profile -%}
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      {%- if profile.eyebrow != blank %}
+      <p class="eyebrow-pill">{% include icon.html name="graduation-cap" %}<span>{{ profile.eyebrow }}</span></p>
+      {%- endif %}
+      <h1 class="hero-name">{{ profile.name }}</h1>
+      {%- if profile.native_name != blank %}
+      <p class="hero-native" lang="vi">{{ profile.native_name }}</p>
+      {%- endif %}
+      <div class="hero-bio">{{ profile.bio | markdownify }}</div>
+      <div class="hero-actions">
+        {%- if profile.email != blank %}<a class="btn btn-primary" href="mailto:{{ profile.email }}">{% include icon.html name="mail" %}Contact me</a>{% endif %}
+        <a class="btn" href="{{ '/cv/' | relative_url }}">{% include icon.html name="file-text" %}CV</a>
+        {%- if site.posts.size > 0 %}<a class="btn btn-ghost" href="{{ '/blog/' | relative_url }}">Read the blog {% include icon.html name="arrow-right" %}</a>{% endif %}
+      </div>
+      {% include social-links.html %}
+    </div>
+    {%- if profile.photo != blank %}
+    <figure class="hero-photo">
+      <img src="{{ profile.photo | relative_url }}" alt="{{ profile.photo_alt | escape }}" width="640" height="640" fetchpriority="high" decoding="async">
+    </figure>
+    {%- endif %}
+  </div>
+</section>
+
+{%- assign news = site.data.news %}
+{%- if news.size > 0 %}{% assign news = news | sort: "date" | reverse %}{% endif %}
+{%- if news.size > 0 %}
+<section class="section" aria-labelledby="h-news">
+  <div class="wrap">
+    <div class="section-head"><h2 class="section-title" id="h-news">News</h2></div>
+    <ul class="news">
+      {%- for n in news limit: 5 %}
+      <li><time class="news-date" datetime="{{ n.date | date_to_xmlschema }}">{{ n.date | date: "%b %Y" }}</time><span class="news-text">{{ n.text | markdownify | remove: '<p>' | remove: '</p>' }}</span></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+{%- endif %}
+
+{%- if profile.interests.size > 0 %}
+<section class="section" aria-labelledby="h-interests">
+  <div class="wrap">
+    <div class="section-head"><h2 class="section-title" id="h-interests">Research interests</h2></div>
+    <ul class="grid interests">
+      {%- for i in profile.interests %}
+      <li class="card interest">
+        <span class="interest-index" aria-hidden="true">{{ forloop.index | prepend: "0" }}</span>
+        <h3 class="interest-title">{{ i.title }}</h3>
+        <p>{{ i.text }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+{%- endif %}
+
+{%- assign featured_projects = site.projects | where: "featured", true | sort: "date" | reverse %}
+{%- if featured_projects.size > 0 %}
+<section class="section" aria-labelledby="h-projects">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title" id="h-projects">Selected projects</h2>
+      <a class="section-more" href="{{ '/projects/' | relative_url }}">All projects {% include icon.html name="arrow-right" %}</a>
+    </div>
+    <div class="grid projects">
+      {%- for project in featured_projects limit: 3 %}{% include project-card.html project=project %}{% endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{%- assign featured_pubs = site.data.publications | where: "featured", true %}
+{%- if featured_pubs.size > 0 %}
+<section class="section" aria-labelledby="h-pubs">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title" id="h-pubs">Selected publications</h2>
+      <a class="section-more" href="{{ '/publications/' | relative_url }}">All publications {% include icon.html name="arrow-right" %}</a>
+    </div>
+    <div class="pubs">
+      {%- for pub in featured_pubs limit: 4 %}{% include publication.html pub=pub %}{% endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{%- if site.data.education.size > 0 or site.data.experience.size > 0 %}
+<section class="section" aria-labelledby="h-background">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title" id="h-background">Background</h2>
+      <a class="section-more" href="{{ '/cv/' | relative_url }}">Full CV {% include icon.html name="arrow-right" %}</a>
+    </div>
+    <div class="two-col">
+      {%- if site.data.education.size > 0 %}
+      <div>
+        <h3 class="col-title">{% include icon.html name="graduation-cap" %}Education</h3>
+        {% include timeline.html items=site.data.education kind="education" %}
+      </div>
+      {%- endif %}
+      {%- if site.data.experience.size > 0 %}
+      <div>
+        <h3 class="col-title">{% include icon.html name="briefcase" %}Experience</h3>
+        {% include timeline.html items=site.data.experience kind="experience" %}
+      </div>
+      {%- endif %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{%- if site.posts.size > 0 %}
+<section class="section" aria-labelledby="h-writing">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title" id="h-writing">Latest writing</h2>
+      <a class="section-more" href="{{ '/blog/' | relative_url }}">All posts {% include icon.html name="arrow-right" %}</a>
+    </div>
+    <ul class="post-list">
+      {%- for post in site.posts limit: 3 %}{% include post-row.html post=post show_year=true %}{% endfor %}
+    </ul>
+  </div>
+</section>
+{%- endif %}

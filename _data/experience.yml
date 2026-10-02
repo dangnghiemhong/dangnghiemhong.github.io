@@ -1,0 +1,9 @@
+# Research / work experience, newest first. Shown on the home page and the CV.
+# Fields: organization, url, detail (one line about the organisation), role, period,
+#         current (true shows a "Current" badge), location,
+#         description (Markdown, one sentence), details (list of bullet points).
+# `period` is optional: omit it rather than guessing a date.
+- organization: PASSIO Lab
+  detail: A collaboration between North Carolina A&T and Harvard Medical School
+  role: Research Assistant
+  description: Research assistant on [The Living Heart Project](https://www.3ds.com/heart).

@@ -1,0 +1,22 @@
+{%- assign profile = site.data.profile -%}
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-left">
+      <p class="footer-name">{{ profile.name }}</p>
+      <p class="footer-sub">{{ profile.eyebrow }}{% if profile.email != blank %} · <a href="mailto:{{ profile.email }}">{{ profile.email }}</a>{% endif %}</p>
+    </div>
+    <div class="footer-right">
+      {% include social-links.html %}
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="footer-meta">
+      <p>© {{ site.time | date: "%Y" }} {{ profile.name }}. Writing and code samples are mine unless noted.</p>
+      <p>
+        <a href="{{ '/feed.xml' | relative_url }}">RSS</a> ·
+        <a href="https://github.com/{{ profile.repo }}">Source</a> ·
+        Built with Jekyll on GitHub Pages · Updated {{ site.time | date: "%-d %b %Y" }}
+      </p>
+    </div>
+  </div>
+</footer>

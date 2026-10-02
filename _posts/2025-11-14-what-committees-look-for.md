@@ -1,9 +1,13 @@
 ---
-layout: default
-title: The things they are seeking
+title: "What Admissions Committees Really Look For"
+description: "What a statement of purpose has to show: you can do the work, will finish, are good to work with, and will be a valuable alumnus."
+date: 2025-11-14 23:02:06 +0700
+tags: [Grad applications, Admissions]
+series: "Statement of Purpose guide"
+series_order: 2
+redirect_from:
+  - /writing/admisson_looking
 ---
-
-# What Admissions Committees Really Look For
 
 Your SOP is not just a "personal statement". Committees mainly want to know:
 

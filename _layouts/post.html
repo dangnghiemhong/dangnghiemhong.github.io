@@ -1,0 +1,64 @@
+---
+layout: default
+---
+{%- assign profile = site.data.profile -%}
+{%- assign words = content | strip_html | number_of_words -%}
+{%- assign mins = words | divided_by: 220.0 | ceil -%}
+<article class="wrap post">
+  <header class="post-head">
+    <p class="eyebrow"><a href="{{ '/blog/' | relative_url }}">← Blog</a></p>
+    <h1 class="post-title">{{ page.title }}</h1>
+    {%- if page.description %}
+    <p class="post-desc">{{ page.description }}</p>
+    {%- endif %}
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      <span aria-hidden="true">·</span> <span>{{ mins }} min read</span>
+      {%- if page.last_modified_at %}
+      <span aria-hidden="true">·</span> <span>Updated <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{{ page.last_modified_at | date: "%B %-d, %Y" }}</time></span>
+      {%- endif %}
+    </p>
+    {%- if page.tags.size > 0 %}
+    <ul class="tags">
+      {%- for t in page.tags %}
+      <li><a class="tag" href="{{ '/blog/' | relative_url }}?tag={{ t | slugify }}">{{ t }}</a></li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+  </header>
+
+  <div class="post-layout">
+    <aside class="toc" data-toc{% if page.toc == false %} data-toc-off{% endif %} hidden></aside>
+    <div class="post-body prose" data-prose>
+      {{ content }}
+    </div>
+  </div>
+
+  {%- if page.series %}
+  {%- assign series_posts = site.posts | where: "series", page.series | sort: "series_order" %}
+  {%- if series_posts.size > 1 %}
+  <nav class="series-box" aria-label="Series: {{ page.series | escape }}">
+    <p class="series-title">In this series · {{ page.series }}</p>
+    <ol>
+      {%- for sp in series_posts %}
+      <li>{% if sp.url == page.url %}<span aria-current="page">{{ sp.title }}</span>{% else %}<a href="{{ sp.url | relative_url }}">{{ sp.title }}</a>{% endif %}</li>
+      {%- endfor %}
+    </ol>
+  </nav>
+  {%- endif %}
+  {%- endif %}
+
+  <footer class="post-foot">
+    <p class="post-edit"><a href="https://github.com/{{ profile.repo }}/edit/main/{{ page.path }}">Suggest an edit on GitHub</a></p>
+    {%- if page.previous or page.next %}
+    <nav class="post-nav" aria-label="More posts">
+      {%- if page.previous %}
+      <a class="post-nav-link" rel="prev" href="{{ page.previous.url | relative_url }}"><span class="post-nav-label">← Older</span><span class="post-nav-title">{{ page.previous.title }}</span></a>
+      {%- else %}<span></span>{% endif %}
+      {%- if page.next %}
+      <a class="post-nav-link post-nav-next" rel="next" href="{{ page.next.url | relative_url }}"><span class="post-nav-label">Newer →</span><span class="post-nav-title">{{ page.next.title }}</span></a>
+      {%- endif %}
+    </nav>
+    {%- endif %}
+  </footer>
+</article>

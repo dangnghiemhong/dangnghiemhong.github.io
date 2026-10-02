@@ -1,0 +1,8 @@
+# Short news items for the home page, newest first (the latest 5 are shown).
+# The section appears automatically once this file contains an entry.
+# `text` supports inline Markdown.
+#
+# - date: 2026-09-01
+#   text: "Started the Master's in Data & AI at **Institut Polytechnique de Paris**."
+# - date: 2026-06-15
+#   text: "Our paper [Title](https://...) was accepted at **Venue**."

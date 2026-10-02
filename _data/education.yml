@@ -1,0 +1,13 @@
+# Education, newest first. Shown on the home page and the CV.
+# Fields: institution, url, degree, degree_url, period, current (true shows a "Current" badge),
+#         location, details (list of bullet points: thesis, GPA, honours, relevant courses).
+# `period` is optional: omit it rather than guessing a date.
+- institution: Institut Polytechnique de Paris
+  url: https://www.ip-paris.fr/en
+  degree: "Master's in Data & Artificial Intelligence (DataAI)"
+  degree_url: https://www.ip-paris.fr/en/education/masters/computer-science-program/major-data-and-artificial-intelligence-dataai
+  current: true
+
+- institution: Hanoi University of Science and Technology (HUST)
+  url: https://en.hust.edu.vn/home
+  degree: Engineer's Degree in Information Technology

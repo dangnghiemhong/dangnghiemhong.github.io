@@ -1,0 +1,15 @@
+{%- comment -%}
+  Row of small link pills from a `links:` map (see _data/link_types.yml).
+  Usage: {% include link-buttons.html links=pub.links %}
+{%- endcomment -%}
+{%- if include.links -%}
+<ul class="link-pills">
+  {%- for l in include.links -%}
+    {%- assign key = l[0] -%}
+    {%- assign kind = site.data.link_types[key] -%}
+    {%- if kind -%}{%- assign label = kind.label -%}{%- assign icon = kind.icon -%}
+    {%- else -%}{%- assign label = key | capitalize -%}{%- assign icon = "link" -%}{%- endif %}
+  <li><a class="pill" href="{{ l[1] }}">{% include icon.html name=icon %}<span>{{ label }}</span></a></li>
+  {%- endfor %}
+</ul>
+{%- endif -%}

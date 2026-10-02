@@ -1,0 +1,15 @@
+---
+layout: default
+title: Page not found
+permalink: /404.html
+sitemap: false
+---
+<div class="wrap page notfound">
+  <p class="eyebrow-pill"><span>404</span></p>
+  <h1 class="page-title">This page doesn't exist.</h1>
+  <p class="page-sub">It may have moved, or the link may be mistyped.</p>
+  <p class="hero-actions">
+    <a class="btn btn-primary" href="{{ '/' | relative_url }}">Go home</a>
+    {%- if site.posts.size > 0 %}<a class="btn" href="{{ '/blog/' | relative_url }}">Browse the blog</a>{% endif %}
+  </p>
+</div>

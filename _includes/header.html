@@ -1,0 +1,28 @@
+{%- assign profile = site.data.profile -%}
+{%- assign parts = profile.name | split: " " -%}
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ profile.name | escape }}, home">
+      <span class="brand-mark" aria-hidden="true">{{ parts.first | slice: 0 }}{{ parts.last | slice: 0 }}</span>
+      <span class="brand-name">{{ profile.name }}</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        {%- for item in site.data.navigation %}
+          {%- assign show = true -%}
+          {%- case item.requires -%}
+            {%- when "publications" %}{% unless site.data.publications.size > 0 %}{% assign show = false %}{% endunless -%}
+            {%- when "projects" %}{% unless site.projects.size > 0 %}{% assign show = false %}{% endunless -%}
+            {%- when "posts" %}{% unless site.posts.size > 0 %}{% assign show = false %}{% endunless -%}
+          {%- endcase -%}
+          {%- if show %}
+        <li><a href="{{ item.url | relative_url }}"{% if page.url contains item.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+          {%- endif %}
+        {%- endfor %}
+      </ul>
+    </nav>
+    <button class="icon-btn theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" data-theme-toggle>
+      {% include icon.html name="sun" class="i-sun" %}{% include icon.html name="moon" class="i-moon" %}
+    </button>
+  </div>
+</header>

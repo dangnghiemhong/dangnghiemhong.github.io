@@ -1,0 +1,68 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  YOUR PROFILE — the single place for personal details.
+#  Everything here feeds the home page, footer, CV and search-engine metadata.
+#  Leave a field empty ("") to hide it.
+# ─────────────────────────────────────────────────────────────────────────────
+
+name: Dang Hong Nghiem
+native_name: Nghiêm Hồng Đăng       # shown under the name; set to "" to hide
+repo: dangnghiemhong/dangnghiemhong.github.io   # used for "Suggest an edit" links
+
+# Spellings under which your name appears in author lists (they get highlighted
+# in the publication list). Add any variant you publish under.
+name_variants:
+  - Nghiem Hong Dang
+  - Dang H. Nghiem
+  - D. H. Nghiem
+  - Nghiêm Hồng Đăng
+
+# Small line above your name on the home page.
+eyebrow: "MSc student · Data & AI · IP Paris"
+
+# Short bio shown in the hero. Markdown is allowed (links, **bold**).
+bio: >-
+  I'm a Master's student in Data & Artificial Intelligence at
+  [Institut Polytechnique de Paris](https://www.ip-paris.fr/en).
+  My research interests are deep learning, computational modeling, and creating
+  data-driven digital twins of human health by integrating clinical data with
+  physics-based simulations.
+
+# Research interests: shown as cards on the home page. Add, remove or reword freely.
+interests:
+  - title: Deep learning
+    text: Learning-based models for complex, high-dimensional data.
+  - title: Computational modeling
+    text: Mathematical and numerical models of complex systems.
+  - title: Digital twins for human health
+    text: Data-driven, patient-specific models of the human body.
+  - title: Clinical data × physics-based simulation
+    text: Combining patient measurements with mechanistic simulation.
+
+# Contact. Shown on the home page and in the footer.
+email: nghiemhongdang@gmail.com
+photo: /assets/img/profile.jpg
+photo_alt: Portrait of Dang Hong Nghiem
+
+# Profile links → icon row in the hero and footer (+ structured data for search engines).
+# `icon` is any symbol in assets/img/icons.svg (github, linkedin, googlescholar, orcid,
+# x, bluesky, huggingface, kaggle, arxiv, researchgate, semanticscholar, youtube, medium,
+# globe, ...). Un-comment and fill in the ones you actually use.
+links:
+  - label: GitHub
+    icon: github
+    url: https://github.com/dangnghiemhong
+  # - label: LinkedIn
+  #   icon: linkedin
+  #   url: https://www.linkedin.com/in/YOUR-HANDLE/
+  # - label: Google Scholar
+  #   icon: googlescholar
+  #   url: https://scholar.google.com/citations?user=YOUR-ID
+  # - label: ORCID
+  #   icon: orcid
+  #   url: https://orcid.org/0000-0000-0000-0000
+  # - label: Hugging Face
+  #   icon: huggingface
+  #   url: https://huggingface.co/YOUR-HANDLE
+  # - label: X
+  #   icon: x
+  #   url: https://x.com/YOUR-HANDLE

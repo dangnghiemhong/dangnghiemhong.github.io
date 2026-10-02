@@ -1,9 +1,13 @@
 ---
-layout: default
-title: Common Mistakes
+title: "Common SOP Mistakes to Avoid"
+description: "Six common statement-of-purpose mistakes, and what to do instead."
+date: 2025-11-14 23:04:52 +0700
+tags: [Grad applications, Writing]
+series: "Statement of Purpose guide"
+series_order: 5
+redirect_from:
+  - /writing/mistake
 ---
-
-# Common SOP Mistakes to Avoid
 
 - **Just repeating your CV.**  
   Listing your GPA, ranks, and awards again wastes space—they already saw those. Use the SOP to explain the *story* behind these achievements instead.

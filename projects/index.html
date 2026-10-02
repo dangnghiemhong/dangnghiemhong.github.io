@@ -1,0 +1,36 @@
+---
+layout: page
+title: Projects
+subtitle: Things I built, with the code to prove it.
+description: Selected AI and software projects, with links to code, demos and write-ups.
+permalink: /projects/
+sitemap: false
+needs: projects
+---
+{%- if site.projects.size > 0 %}
+{%- assign projects = site.projects | sort: "date" | reverse %}
+{%- assign tag_blob = projects | map: "tags" | join: "~~" %}
+{%- assign all_tags = tag_blob | split: "~~" | uniq | sort_natural %}
+<div class="filter-bar" data-filter>
+  <label class="filter-search">
+    {% include icon.html name="search" %}
+    <span class="visually-hidden">Search projects</span>
+    <input type="search" placeholder="Search projects" autocomplete="off" data-filter-input>
+  </label>
+  {%- if all_tags.size > 1 %}
+  <ul class="tags filter-tags" aria-label="Filter by tag">
+    <li><button type="button" class="tag tag-btn" data-filter-tag="" aria-pressed="true">All</button></li>
+    {%- for t in all_tags %}{% if t != blank %}
+    <li><button type="button" class="tag tag-btn" data-filter-tag="{{ t | slugify }}" aria-pressed="false">{{ t }}</button></li>
+    {%- endif %}{% endfor %}
+  </ul>
+  {%- endif %}
+  <p class="filter-status" role="status" aria-live="polite" data-filter-status></p>
+</div>
+<div class="grid projects">
+  {%- for project in projects %}{% include project-card.html project=project %}{% endfor %}
+</div>
+<p class="filter-empty" data-filter-empty hidden>No projects match. Try a different search or tag.</p>
+{%- else %}
+<p class="empty-note">Nothing to show here yet. <a href="{{ '/' | relative_url }}">Back to the home page</a>.</p>
+{%- endif %}

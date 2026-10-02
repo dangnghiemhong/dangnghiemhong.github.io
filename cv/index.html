@@ -1,0 +1,61 @@
+---
+layout: page
+title: Curriculum Vitae
+subtitle: Education, experience and selected work.
+description: "Curriculum vitae of Dang Hong Nghiem: education, experience, publications, skills and awards."
+permalink: /cv/
+---
+{%- assign profile = site.data.profile -%}
+{%- assign cv_pdf = site.static_files | where: "path", "/assets/files/cv.pdf" -%}
+<div class="cv">
+  <div class="cv-actions">
+    {%- if cv_pdf.size > 0 %}<a class="btn btn-primary" href="{{ '/assets/files/cv.pdf' | relative_url }}">{% include icon.html name="download" %}Download PDF</a>{% endif %}
+    {%- if profile.email != blank %}<a class="btn" href="mailto:{{ profile.email }}">{% include icon.html name="mail" %}{{ profile.email }}</a>{% endif %}
+  </div>
+
+  {%- if site.data.education.size > 0 %}
+  <section class="cv-section"><h2 class="cv-h">Education</h2>{% include timeline.html items=site.data.education kind="education" %}</section>
+  {%- endif %}
+  {%- if site.data.experience.size > 0 %}
+  <section class="cv-section"><h2 class="cv-h">Experience</h2>{% include timeline.html items=site.data.experience kind="experience" %}</section>
+  {%- endif %}
+
+  {%- if site.data.publications.size > 0 %}
+  <section class="cv-section"><h2 class="cv-h">Publications</h2>
+    <div class="pubs">{% for pub in site.data.publications %}{% include publication.html pub=pub %}{% endfor %}</div>
+  </section>
+  {%- endif %}
+
+  {%- if site.projects.size > 0 %}
+  <section class="cv-section"><h2 class="cv-h">Projects</h2>
+    <ul class="cv-list">
+      {%- assign cv_projects = site.projects | sort: "date" | reverse %}
+      {%- for p in cv_projects %}<li><strong>{{ p.title }}</strong>{% if p.summary %}: {{ p.summary }}{% endif %}</li>{% endfor %}
+    </ul>
+  </section>
+  {%- endif %}
+
+  {%- if site.data.skills.size > 0 %}
+  <section class="cv-section"><h2 class="cv-h">Skills</h2>
+    <dl class="skills">
+      {%- for s in site.data.skills %}<dt>{{ s.group }}</dt><dd>{{ s.items | join: ", " }}</dd>{% endfor %}
+    </dl>
+  </section>
+  {%- endif %}
+
+  {%- if site.data.awards.size > 0 %}
+  <section class="cv-section"><h2 class="cv-h">Awards</h2>
+    <ul class="cv-list">
+      {%- for a in site.data.awards %}<li><strong>{{ a.title }}</strong>{% if a.by %}, {{ a.by }}{% endif %}{% if a.year %} ({{ a.year }}){% endif %}{% if a.text %}. {{ a.text }}{% endif %}</li>{% endfor %}
+    </ul>
+  </section>
+  {%- endif %}
+
+  {%- if site.data.talks.size > 0 %}
+  <section class="cv-section"><h2 class="cv-h">Talks &amp; teaching</h2>
+    <ul class="cv-list">
+      {%- for t in site.data.talks %}<li>{% if t.url %}<a href="{{ t.url }}">{{ t.title }}</a>{% else %}{{ t.title }}{% endif %}{% if t.event %}, {{ t.event }}{% endif %}{% if t.year %} ({{ t.year }}){% endif %}</li>{% endfor %}
+    </ul>
+  </section>
+  {%- endif %}
+</div>

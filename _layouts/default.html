@@ -1,40 +1,29 @@
+{%- comment -%}
+  Math (KaTeX) is loaded only when a page contains math: kramdown turns $$…$$ into \( … \) / \[ … \].
+  Override per page with `math: true` (force on) or `math: false` (force off).
+{%- endcomment -%}
+{%- assign needs_math = false -%}
+{%- if page.math == true -%}
+  {%- assign needs_math = true -%}
+{%- elsif page.math != false -%}
+  {%- if content contains '\(' or content contains '\[' -%}{%- assign needs_math = true -%}{%- endif -%}
+{%- endif -%}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ site.lang | default: 'en' }}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {% include head.html needs_math=needs_math %}
 </head>
 <body>
-    <div class="container">
-        <!-- Header Section -->
-        <div class="header">
-            <a href="{{ '/' | relative_url }}">
-                <img src="{{ '/pic.jpg' | relative_url }}" alt="Profile picture of {{ site.author }}" class="profile-pic">
-            </a>
-            <h1>{{ site.title }}</h1>
-            <p>{{ site.description }}</p>
-            <p class="email-display">📧 {{ site.email }}</p>
-        </div>
-
-        <!-- Tab Navigation -->
-        <nav class="tab-navigation">
-            <ul class="tab-buttons">
-                <li><a href="{{ '/' | relative_url }}" class="tab-link {% if page.url == '/' %}active{% endif %}">Home</a></li>
-                <li><a href="{{ '/writing/' | relative_url }}" class="tab-link {% if page.url contains '/writing' %}active{% endif %}">Writing</a></li>
-                <li><a href="{{ '/knowledge/' | relative_url }}" class="tab-link {% if page.url contains '/knowledge' %}active{% endif %}">Knowledge</a></li>
-                <li><a href="{{ '/blog/' | relative_url }}" class="tab-link {% if page.url contains '/blog' %}active{% endif %}">Blog</a></li>
-            </ul>
-        </nav>
-
-        <!-- Main Content -->
-        <div class="tab-content">
-            <div class="tab-pane active">
-                {{ content }}
-            </div>
-        </div>
-    </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% include header.html %}
+  <main id="main" tabindex="-1">
+    {{ content }}
+  </main>
+  {% include footer.html %}
+  {%- if needs_math %}
+  <script src="{{ '/assets/vendor/katex/katex.min.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/vendor/katex/auto-render.min.js' | relative_url }}" defer></script>
+  {%- endif %}
+  <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
 </body>
 </html>
-

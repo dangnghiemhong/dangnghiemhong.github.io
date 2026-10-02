@@ -1,0 +1,8 @@
+# Talks, posters and teaching for the CV page, newest first.
+# The section appears automatically once this file contains an entry.
+#
+# - title: "Talk title"
+#   event: "Seminar / conference name"
+#   year: 2026
+#   type: talk                       # talk | poster | teaching | service
+#   url: https://...                 # optional (slides, recording)

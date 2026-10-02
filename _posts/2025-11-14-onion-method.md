@@ -1,9 +1,13 @@
 ---
-layout: default
-title: Write like an Onion
+title: "The “Onion” Method: Build Your SOP from the Core Out"
+description: "Build a statement of purpose from a core message outward, one layer at a time."
+date: 2025-11-14 23:06:42 +0700
+tags: [Grad applications, Writing]
+series: "Statement of Purpose guide"
+series_order: 4
+redirect_from:
+  - /writing/onion
 ---
-
-# The “Onion” Method: Build Your SOP from the Core Out
 
 Think of your SOP as an onion:
 

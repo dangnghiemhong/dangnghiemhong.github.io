@@ -1,0 +1,29 @@
+{%- comment -%}
+  Vertical timeline for education or experience.
+  Usage: {% include timeline.html items=site.data.education kind="education" %}
+{%- endcomment -%}
+<ol class="timeline">
+  {%- for it in include.items %}
+  <li class="timeline-item">
+    <div class="timeline-head">
+      {%- if include.kind == "education" %}
+      <h3 class="timeline-title">{% if it.url %}<a href="{{ it.url }}">{{ it.institution | escape }}</a>{% else %}{{ it.institution | escape }}{% endif %}</h3>
+      {%- else %}
+      <h3 class="timeline-title">{% if it.url %}<a href="{{ it.url }}">{{ it.organization | escape }}</a>{% else %}{{ it.organization | escape }}{% endif %}</h3>
+      {%- endif %}
+      {%- if it.period %}<span class="timeline-when">{{ it.period | escape }}</span>{% endif -%}
+      {%- if it.current %}<span class="badge badge-accent">Current</span>{% endif %}
+    </div>
+    {%- if include.kind == "education" %}
+    <p class="timeline-sub">{% if it.degree_url %}<a href="{{ it.degree_url }}">{{ it.degree | escape }}</a>{% else %}{{ it.degree | escape }}{% endif %}{% if it.location %} · {{ it.location | escape }}{% endif %}</p>
+    {%- else %}
+    <p class="timeline-sub">{{ it.role | escape }}{% if it.location %} · {{ it.location | escape }}{% endif %}</p>
+    {%- if it.detail %}<p class="timeline-note">{{ it.detail | escape }}</p>{% endif %}
+    {%- if it.description %}<div class="timeline-desc">{{ it.description | markdownify }}</div>{% endif %}
+    {%- endif %}
+    {%- if it.details.size > 0 %}
+    <ul class="timeline-list">{% for d in it.details %}<li>{{ d | markdownify | remove: '<p>' | remove: '</p>' }}</li>{% endfor %}</ul>
+    {%- endif %}
+  </li>
+  {%- endfor %}
+</ol>

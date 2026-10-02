@@ -1,0 +1,39 @@
+---
+layout: page
+title: Blog
+subtitle: Writing on AI research and engineering, and guides for graduate applications.
+description: Writing on AI research and engineering, and guides for graduate applications.
+permalink: /blog/
+redirect_from:
+  - /writing/
+  - /knowledge/
+---
+{%- assign all_tags = site.tags | sort %}
+<div class="filter-bar" data-filter>
+  <label class="filter-search">
+    {% include icon.html name="search" %}
+    <span class="visually-hidden">Search posts</span>
+    <input type="search" placeholder="Search posts" autocomplete="off" data-filter-input>
+  </label>
+  {%- if all_tags.size > 0 %}
+  <ul class="tags filter-tags" aria-label="Filter by tag">
+    <li><button type="button" class="tag tag-btn" data-filter-tag="" aria-pressed="true">All</button></li>
+    {%- for tag in all_tags %}
+    <li><button type="button" class="tag tag-btn" data-filter-tag="{{ tag[0] | slugify }}" aria-pressed="false">{{ tag[0] }} <span class="tag-count">{{ tag[1].size }}</span></button></li>
+    {%- endfor %}
+  </ul>
+  {%- endif %}
+  <p class="filter-status" role="status" aria-live="polite" data-filter-status></p>
+</div>
+
+{%- assign by_year = site.posts | group_by_exp: "p", "p.date | date: '%Y'" %}
+{%- for y in by_year %}
+<section class="year-group" data-filter-group>
+  <h2 class="year">{{ y.name }}</h2>
+  <ul class="post-list">
+    {%- for post in y.items %}{% include post-row.html post=post %}{% endfor %}
+  </ul>
+</section>
+{%- endfor %}
+<p class="filter-empty" data-filter-empty hidden>No posts match. Try a different search or tag.</p>
+<p class="feed-note">{% include icon.html name="rss" %} Follow along with the <a href="{{ '/feed.xml' | relative_url }}">RSS feed</a>.</p>

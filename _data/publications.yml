@@ -1,0 +1,25 @@
+# Publications, preprints and theses. Newest first; entries are grouped by `year`.
+# The "Publications" menu item and the home-page section appear automatically once
+# this file contains at least one entry. Copy the block below, remove the leading "# ".
+#
+# - title: "Paper title"
+#   authors: [Dang Hong Nghiem, Co Author, Another Author*]    # your name is highlighted; add "*" for equal contribution
+#   venue: "Conference or journal name"
+#   year: 2026
+#   type: conference                 # conference | journal | workshop | preprint | thesis | poster
+#   status: ""                       # optional, e.g. "Accepted", "Under review"
+#   award: ""                        # optional, e.g. "Best Paper"
+#   featured: true                   # true → also listed on the home page
+#   tldr: "One sentence on what it shows."                      # optional
+#   abstract: >-                     # optional; shown in an expandable section
+#     Abstract text.
+#   links:                           # any keys from _data/link_types.yml
+#     pdf: https://...
+#     arxiv: https://arxiv.org/abs/...
+#     code: https://github.com/...
+#   bibtex: |                        # optional; adds a BibTeX section with a copy button
+#     @inproceedings{nghiem2026key,
+#       title = {Paper title},
+#       author = {Nghiem, Dang Hong and Author, Co},
+#       year = {2026}
+#     }

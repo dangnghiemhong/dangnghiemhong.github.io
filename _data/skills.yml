@@ -1,0 +1,10 @@
+# Technical skills for the CV page, grouped. Only list what you can back up with a project,
+# a paper or a job; bars and percentages are deliberately not supported (they carry no information).
+# The section appears automatically once this file contains an entry.
+#
+# - group: Languages
+#   items: [Python, C++, SQL]
+# - group: ML frameworks
+#   items: [PyTorch, JAX, scikit-learn]
+# - group: Tools
+#   items: [Git, Docker, Linux, LaTeX]

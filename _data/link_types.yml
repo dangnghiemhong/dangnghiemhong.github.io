@@ -1,0 +1,20 @@
+# Button labels and icons for the `links:` map on projects and publications.
+# Use any key below in front matter (e.g. `links: { code: https://..., demo: https://... }`).
+# To support a new kind of link, add a line here: no template changes needed.
+# Unknown keys still work: they use the key as label and a generic link icon.
+pdf:         { label: PDF,          icon: file-text }
+arxiv:       { label: arXiv,        icon: arxiv }
+paper:       { label: Paper,        icon: book-open }
+code:        { label: Code,         icon: code }
+github:      { label: GitHub,       icon: github }
+demo:        { label: Demo,         icon: play }
+video:       { label: Video,        icon: play }
+slides:      { label: Slides,       icon: presentation }
+poster:      { label: Poster,       icon: image }
+dataset:     { label: Data,         icon: database }
+model:       { label: Model,        icon: box }
+huggingface: { label: Hugging Face, icon: huggingface }
+project:     { label: Project page, icon: globe }
+website:     { label: Website,      icon: globe }
+blog:        { label: Blog post,    icon: pen-line }
+doi:         { label: DOI,          icon: link }

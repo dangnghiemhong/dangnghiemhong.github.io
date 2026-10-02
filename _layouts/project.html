@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<article class="wrap post project-page">
+  <header class="post-head">
+    <p class="eyebrow"><a href="{{ '/projects/' | relative_url }}">← Projects</a></p>
+    <h1 class="post-title">{{ page.title }}</h1>
+    {%- if page.summary %}
+    <p class="post-desc">{{ page.summary }}</p>
+    {%- endif %}
+    <p class="post-meta">
+      {%- if page.status %}<span class="badge">{{ page.status }}</span>{% endif %}
+      {%- if page.role %} <span>{{ page.role }}</span>{% endif %}
+      {%- if page.date %} <span aria-hidden="true">·</span> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y" }}</time>{% endif %}
+    </p>
+    {%- if page.tags.size > 0 %}
+    <ul class="tags">{% for t in page.tags %}<li><span class="tag">{{ t }}</span></li>{% endfor %}</ul>
+    {%- endif %}
+    {% include link-buttons.html links=page.links %}
+  </header>
+  <div class="post-layout">
+    <aside class="toc" data-toc hidden></aside>
+    <div class="post-body prose" data-prose>
+      {{ content }}
+    </div>
+  </div>
+</article>

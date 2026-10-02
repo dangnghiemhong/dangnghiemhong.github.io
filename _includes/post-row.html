@@ -1,0 +1,23 @@
+{%- comment -%}
+  One row in a post list (home page + blog index). Usage: {% include post-row.html post=post %}
+  The whole row is clickable through a stretched link; tags sit above it.
+{%- endcomment -%}
+{%- assign post = include.post -%}
+{%- assign desc = post.description -%}
+{%- unless desc -%}{%- assign desc = post.excerpt | strip_html | strip | truncate: 170 -%}{%- endunless -%}
+<li class="post-row" data-filter-item data-tags="{% for t in post.tags %}{{ t | slugify }} {% endfor %}" data-text="{{ post.title | append: ' ' | append: desc | downcase | escape }}">
+  <time class="post-row-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d" }}{% if include.show_year %}, {{ post.date | date: "%Y" }}{% endif %}</time>
+  <div class="post-row-main">
+    <h3 class="post-row-title"><a class="stretched" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+    {%- if desc != blank %}
+    <p class="post-row-desc">{{ desc | escape }}</p>
+    {%- endif %}
+    {%- if post.tags.size > 0 %}
+    <ul class="tags">
+      {%- for t in post.tags %}
+      <li><a class="tag" href="{{ '/blog/' | relative_url }}?tag={{ t | slugify }}">{{ t }}</a></li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+  </div>
+</li>
