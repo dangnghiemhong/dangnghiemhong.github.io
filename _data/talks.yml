@@ -1,6 +1,8 @@
 # Talks, posters and teaching for the CV page, newest first.
-# Fields: title, event, year (text is fine, e.g. "Nov 2025"), type, url (optional: slides, recording).
-- title: "AI for Mathematics Proof Generation and Algorithm Discovery"
-  event: "GSTAR AI Summit 2025: AI & Humanity, Hanoi (invited talk, co-presenter)"
-  year: "Nov 2025"
-  type: talk
+# The section appears automatically once this file contains an entry.
+#
+# - title: "Talk title"
+#   event: "Seminar / conference name"
+#   year: "Nov 2025"                 # text is fine
+#   type: talk                       # talk | poster | teaching | service
+#   url: https://...                 # optional (slides, recording)

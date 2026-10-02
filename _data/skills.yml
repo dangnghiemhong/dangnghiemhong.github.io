@@ -1,16 +1,9 @@
-# Technical skills, grouped. Shown on the home page ("Toolbox") and the CV.
-# Only list what you can back up with a project or a job; bars and percentages are deliberately
-# not supported. `hide_on_home: true` keeps a group on the CV only.
-- group: Post-training & RL
-  items: [GRPO/Dr-GRPO, PPO-style objectives, reward shaping, RLHF concepts, "parameter-efficient fine-tuning (partial FT, LoRA)"]
-- group: Reasoning & agents
-  items: [test-time compute, "confidence-weighted voting (DeepConf)", trace filtering, LLM-agent planning & tool use, "retrieval-augmented generation (RAG)", SHAP interpretability]
-- group: Systems for LLMs
-  items: [vLLM serving, Triton/CUDA kernels, FlashAttention, memory-optimised sampling, GPU profiling]
-- group: Frameworks & code
-  items: [PyTorch, Hugging Face Transformers, TensorFlow, Python, C/C++, SQL]
-- group: Tooling & environment
-  items: [Linux, Git, Docker, LaTeX, experiment tracking & benchmarking]
+# Skills for the CV page, plus an opt-in short list for the home page ("Toolbox").
+# This is a personal website, not a full stack inventory: list only the few tools you reach for most.
+# Only list what you can back up with a project or a job; bars and percentages are not supported.
+#   home: true   → the group is also shown on the home page (keep it to one short row)
+- group: Core tools
+  home: true
+  items: [Python, C/C++, PyTorch, Hugging Face, vLLM, Triton]
 - group: Languages
-  hide_on_home: true
   items: ["English (IELTS 7.5, C1)", "Vietnamese (native)", "French (beginner, actively learning)"]

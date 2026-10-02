@@ -1,18 +1,21 @@
 {%- comment -%}
   A project card. Usage: {% include project-card.html project=project %}
   The title links to the case-study page only when the file has body text.
+  Optional: heading="h2" when the card sits directly under the page's h1 (default h3).
 {%- endcomment -%}
 {%- assign p = include.project -%}
+{%- assign h = include.heading | default: "h3" -%}
 {%- assign body = p.content | strip_html | strip -%}
 <article class="card project-card" data-filter-item data-tags="{% for t in p.tags %}{{ t | slugify }} {% endfor %}" data-text="{{ p.title | append: ' ' | append: p.summary | append: ' ' | append: p.tags | downcase | escape }}">
-  {%- if p.image %}
-  <img class="project-thumb" src="{{ p.image | relative_url }}" alt="{{ p.image_alt | default: '' | escape }}" loading="lazy" decoding="async">
+  {%- comment -%} `thumbnail`, not `image`: `image` is the social-preview key (site default in _config.yml). {%- endcomment %}
+  {%- if p.thumbnail %}
+  <img class="project-thumb" src="{{ p.thumbnail | relative_url }}" alt="{{ p.thumbnail_alt | default: '' | escape }}" loading="lazy" decoding="async">
   {%- endif %}
   <div class="project-body">
     <div class="project-top">
-      <h3 class="project-title">
+      <{{ h }} class="project-title">
         {%- if body.size > 0 %}<a href="{{ p.url | relative_url }}">{{ p.title | escape }}</a>{% else %}{{ p.title | escape }}{% endif -%}
-      </h3>
+      </{{ h }}>
       {%- if p.status %}<span class="badge">{{ p.status | escape }}</span>{% endif %}
     </div>
     <p class="project-summary">{{ p.summary | escape }}</p>

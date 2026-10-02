@@ -37,7 +37,7 @@ bio: >-
 # Research interests: shown as cards on the home page. Add, remove or reword freely.
 interests:
   - title: LLM post-training & RL
-    text: Reinforcement-learning pipelines (GRPO, Dr-GRPO) with reward shaping for mathematical reasoning.
+    text: Reinforcement-learning pipelines (GRPO, Dr-GRPO) for reasoning tasks.
   - title: Test-time reasoning
     text: Spending more compute at inference, with parallel thinking and confidence-weighted voting.
   - title: Agentic systems

@@ -13,7 +13,7 @@ Live at <https://dangnghiemhong.github.io>. Built with Jekyll and served by GitH
 | Name, bio, photo, contact emails, profile links, research-interest cards | [`_data/profile.yml`](_data/profile.yml) |
 | Education, experience (home page, `/experience/`, CV) | [`_data/education.yml`](_data/education.yml), [`_data/experience.yml`](_data/experience.yml) |
 | Honours & scholarships (`/experience/`, CV) | [`_data/awards.yml`](_data/awards.yml) |
-| Skills (home "Toolbox" + CV; `hide_on_home: true` keeps a group on the CV only) | [`_data/skills.yml`](_data/skills.yml) |
+| Skills: CV list, and the short home "Toolbox" (`home: true` on a group; keep it to one row) | [`_data/skills.yml`](_data/skills.yml) |
 | Research tab / publications (the tab is always in the menu; entries appear as you add them) | [`_data/publications.yml`](_data/publications.yml) |
 | News items on the home page | [`_data/news.yml`](_data/news.yml) |
 | Talks (CV) | [`_data/talks.yml`](_data/talks.yml) |

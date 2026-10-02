@@ -117,21 +117,23 @@ description: Master's student in Data & AI at Institut Polytechnique de Paris. L
 </section>
 {%- endif %}
 
-{%- if site.data.skills.size > 0 %}
+{%- assign home_skills = site.data.skills | where: "home", true %}
+{%- if home_skills.size > 0 %}
 <section class="section" aria-labelledby="h-toolbox">
   <div class="wrap">
-    <div class="section-head">
-      <h2 class="section-title" id="h-toolbox">Toolbox</h2>
-      <a class="section-more" href="{{ '/cv/' | relative_url }}">Full CV {% include icon.html name="arrow-right" %}</a>
-    </div>
+    <div class="section-head"><h2 class="section-title" id="h-toolbox">Toolbox</h2></div>
+    {%- if home_skills.size == 1 %}
+    <ul class="tags toolbox-chips">{% for i in home_skills.first.items %}<li><span class="tag tag-lg">{{ i }}</span></li>{% endfor %}</ul>
+    {%- else %}
     <dl class="toolbox">
-      {%- for s in site.data.skills %}{% unless s.hide_on_home %}
+      {%- for s in home_skills %}
       <div class="toolbox-row">
         <dt>{{ s.group }}</dt>
         <dd><ul class="tags">{% for i in s.items %}<li><span class="tag">{{ i }}</span></li>{% endfor %}</ul></dd>
       </div>
-      {%- endunless %}{% endfor %}
+      {%- endfor %}
     </dl>
+    {%- endif %}
   </div>
 </section>
 {%- endif %}

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Projects
-subtitle: Things I built, with the code to prove it.
+subtitle: Selected projects, with the code on GitHub.
 description: Selected AI and software projects, with links to code, demos and write-ups.
 permalink: /projects/
 sitemap: false
@@ -28,7 +28,7 @@ needs: projects
   <p class="filter-status" role="status" aria-live="polite" data-filter-status></p>
 </div>
 <div class="grid projects">
-  {%- for project in projects %}{% include project-card.html project=project %}{% endfor %}
+  {%- for project in projects %}{% include project-card.html project=project heading="h2" %}{% endfor %}
 </div>
 <p class="filter-empty" data-filter-empty hidden>No projects match. Try a different search or tag.</p>
 {%- else %}

@@ -9,8 +9,8 @@ featured: false             # true → also shown on the home page (the 3 newest
 status: Active              # optional badge: Active | Completed | Archived …
 # role: Solo project        # optional
 tags: [PyTorch, Computer vision]
-# image: /assets/img/projects/short-name.png      # optional 16:9 thumbnail
-# image_alt: "What the image shows"
+# thumbnail: /assets/img/projects/short-name.png  # optional 16:9 card image (use `image:` only for the social-preview picture)
+# thumbnail_alt: "What the image shows"
 links:                      # any keys from _data/link_types.yml (code, demo, paper, pdf, slides, video, dataset …)
   code: https://github.com/your-username/your-repo
   # demo: https://…

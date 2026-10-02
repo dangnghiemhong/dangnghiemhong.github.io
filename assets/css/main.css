@@ -506,6 +506,10 @@ a.tag:hover, .tag-btn:hover { border-color: var(--accent-line); color: var(--acc
 .timeline-sub a:hover { color: var(--accent); text-decoration-color: var(--accent); }
 .timeline-note { margin: 0.2rem 0 0; color: var(--ink-3); font-size: 0.92rem; }
 .timeline-desc p { margin: 0.45rem 0 0; color: var(--ink-2); font-size: 0.97rem; }
+.timeline-list a, .timeline-desc a, .timeline-note a, .news-text a, .cv-list a, .pub-tldr a, .pub-more a {
+  text-decoration: underline; text-decoration-thickness: 1px; text-decoration-color: var(--accent-line); text-underline-offset: 0.2em;
+}
+.timeline-list a:hover, .timeline-desc a:hover, .timeline-note a:hover, .news-text a:hover, .cv-list a:hover, .pub-tldr a:hover, .pub-more a:hover { text-decoration-color: var(--accent); }
 .timeline-list { margin: 0.5rem 0 0; padding-left: 1.1rem; color: var(--ink-2); font-size: 0.95rem; }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -603,6 +607,8 @@ a.tag:hover, .tag-btn:hover { border-color: var(--accent-line); color: var(--acc
 .honors-title { font-weight: 650; line-height: 1.35; }
 .honors-by { color: var(--ink-2); font-size: 0.95rem; }
 .honors-text { margin-top: 0.15rem !important; color: var(--ink-3); font-size: 0.92rem; }
+.toolbox-chips { margin: 0; }
+.tag-lg { padding: 0.3rem 0.9rem; font-size: 0.9rem; }
 .toolbox { margin: 0; }
 .toolbox-row { display: grid; grid-template-columns: 11.5rem minmax(0, 1fr); gap: 0.35rem 1.5rem; padding: 0.95rem 0; border-bottom: 1px solid var(--line); }
 .toolbox-row:first-child { padding-top: 0; }

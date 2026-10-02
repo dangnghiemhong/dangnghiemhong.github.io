@@ -21,9 +21,9 @@
   period: Aug 2025 – Dec 2025
   location: Remote
   details:
-    - "Built an end-to-end GRPO / Dr-GRPO reinforcement-learning post-training pipeline for Qwen3-1.7B on mathematical reasoning: PPO-style clipped surrogate loss, group-normalised advantages, reward shaping and memory-optimised vLLM sampling; improved stability and convergence over baseline GRPO."
+    - "Built an end-to-end [GRPO / Dr-GRPO reinforcement-learning post-training pipeline](https://github.com/dangnghiemhong/GRPO-Counting-Problem) for Qwen3-1.7B on the Countdown number puzzle: reward function, group-normalised advantages, PPO-style clipped loss and memory-optimised vLLM sampling, with training-stability fixes over the baseline."
     - "Led the Parallel Thinking track on test-time reasoning: K = 32 parallel traces with DeepConf confidence-weighted voting and top-η% filtering reached 94% accuracy on the 5,409-problem HARP competition-mathematics benchmark."
-    - "Implemented FlashAttention-2 from scratch in Triton (causal, grouped-query and sliding-window attention plus attention sinks, full forward and backward passes): 34–82× faster than naive PyTorch baselines via fp32-stable online softmax and memory-efficient tiling; open-sourced."
+    - "Implemented [FlashAttention-2 forward kernels from scratch in Triton](https://github.com/dangnghiemhong/GStar-FlashAttention) (causal, grouped-query and sliding-window attention plus attention sinks), with backward passes for grouped-query and sliding-window + sink attention: ~34–82× faster than naive PyTorch on the non-causal, causal and grouped-query kernels, using fp32-stable online softmax and tiling."
     - "Designed Associative Graph Memory, a graph-structured attention mechanism for long-context modelling that cuts attention compute 39–44% versus standard Transformers on extended token sequences."
 
 - organization: NAVIS Center
